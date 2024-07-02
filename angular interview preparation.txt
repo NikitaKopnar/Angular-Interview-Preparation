@@ -1,0 +1,59 @@
+========================================================================================================================================================
+What is angular - Angular is development platform built on Typescript, it a component-based framework for building scalable web application.
+It provides multiple online libraries to develop feature like Routing, form management, clieent-server communication.
+There are 8 main building blocks of angualar - 
+Module	   component	template	metadata	data-binding	directives	services	dependency-injection
+Primary use of angular is to develop single-page application, website/web-application is able to rewrite the page with new data received from server.
+
+What are the main feature of angular - 
+dependency injection 	Typescript	data-binding	componentes	directives	templates	unit-testing	Routing		Lazy-loading
+Modules			high-performance		creating-dynamic components
+
+Explain angular component-based architecture - components are main building block of any angular application.component can be created using 
+ng genearte component component-name.which contains mainly 4 files .ts, .html, .spec.ts, .css. 
+.ts contains business logic. It also contains @Component decorator under which we have selector, template-url, style to the angular component.
+we can render dynamic data using data-bindings,create custom directives,inject services to component
+
+directives in angular - component directive	attribute directive	structural directive	
+ngClass - its attribute directive used to apply different style classed to html elements
+ngStyle - its attribute directive used to apply inline style
+ngFor - its structural directive used to display list contents
+ngSwitch - its structural directive used to apply conditinal statement result
+ngIf - its structural directive used to eveluate data on conditinal basis.
+ngTemplateOutlet - its attribute directive, used to create customizable template
+To create custome directive need to use cli command - ng generate directive custome-directive
+@Directive decorator used to define seletor of custom directive, to access nativeElement property import ElementRef and inject to the constructor.
+to apply custome directive use selector in element.
+To handle custome event, import HostListener
+
+Modules in angular - Module in angular contains components, custom directives, pipes, services those are related to application.
+ngModule directive is used to define module in angular which is deprecated. Now angular is using standalone application.
+
+data-binding in angular - data binding used to synchronize data between angular component and HTML
+string interpolation	property binding	event binding	two-way data binding
+
+Services in angular - service in angular are simply typescript class with @injectable() decorator, using this decorator angular get to know this class
+is injectable.
+The main objective of service is to organize and share business logic, models, or data and functions with different components of an angular application.
+those are usually implemented through dependency injection.
+
+what are the form in angular - there are 2 main forms in angular - template-driven form - reactive form
+Reactive form - Reactive forms explicitely created, its structured, immutable, Synchronous, form validations using functions.
+FormGroup - it is collection of form control, used to aggregates the values and statuses of child 'FormControl' instances into one object.
+FormControl - Represents a single input field or control in a form, Provides properties and methods to handle the value and validation state.
+FormArray - an array of FormControl, FormGroup, FormArray instance.Useful to managing a dynamic number of form controls,
+            like an array of addresses or a list of items
+FormBuilder - A service that simplifies the creation of form groups and form controls, reduces boilerplate by providing methods like 'group()', 'control()'
+             and 'array()'
+
+how does angular handles routing - angular handlles routing using RouterModule, where developer can define router.Navigate between components and manages
+manages state during navigation
+Router Module - Angular's RouterModule provides necessary services and directives for routing.it needs to be import in main application module
+Routes - Routes are defined in a configuration array, where each route maps a URL path to a component,the configuration specifies paths, components,param's
+Router Outlet - <router-outlet> directive is placeholder in the template where the routed component will be displayed.This needs to place in main template
+Router Link - The [routerLink] directive allows you to navigate different routes using a URL or a path, replacement of traditional <a> tag.
+Activated Route - ActivatedRoute service provides access to information about the current route, including URL parameters, query parameters and route data.
+Router service - The Route service offers methods to navigate programmatically, get the current route state, and listen to route changes.
+
+===========================================================================================================================================================
+

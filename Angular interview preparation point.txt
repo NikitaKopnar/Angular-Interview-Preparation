@@ -1,0 +1,129 @@
+Interview questions : change detection strategy 
+====================================================
+NPM - Node package Manager, comes along with node download
+Angular project create : ng new project-name --no-strict --standalone false --routing false
+development server : ng serve
+package.json - contains all the dependencies
+typescript is superset to javascript allows to use classes, interface and other features, it does not directly compile, coverts to javascript and javascript runs in browser
+save bootstrap to the project - npm install --save bootstrap@3
+data binding -  communication between typyscript code(busines logic) to Template (HTML)
+				to output data - string interpolation {{}} / property binding [property] = "data"
+				react to user events -  event binding (event) = "expression"
+				combination of the form is two-way binding - [(ngModel)] = "data"
+				
+directives - structural directive : used to change the DOM *ngIf, *ngFor
+			 componet directive
+			 attribute directive  : change element behavior - 
+			 
+Parent to child communication - @Input () propertyName : ''; 
+child to parent communication - @Output () propertyName = new EventEmitter <type>(); 
+								used to define custom events that component can emit to its parent component.
+Modules - @ngModule decorator from angular/core is used to define module which take declaration object in it.
+		  declaration object may contain declaration[],imports[],providers[],exports[]
+		  in main.ts file bootstrap(AppModule) so angular should detect the Module
+		  BrowserModule is inbuild module provided by angular
+		  module created by our own can be exported by that module, and import in app.module
+		
+view encapsulation - view encapsulation is a behavior in angular, where components css styles are encapsulated into the components view.
+					 add encapsulation : ViewEncapsulatin.None / ViewEncapsulatin.Emulated / ViewEncapsulatin.ShadowDom
+					 by default angular uses Emulated view encapsulation
+					 
+template reference varialble - used to refer DOM element, component and directive within template.It provide way to interact with elements 
+							   and component directly.
+							   
+viewChild in angular - @viewChild component is allow parent component to access child component, directve, or DOM element from a parent 
+					   component class.
+=================================================================================================================================================					   
+
+JavaScript Fundamentals – Part 1 
+JavaScript Fundamentals – Part 2
+JavaScript in the Browser: DOM Manipulation Fundamentals 
+How JavaScript Works Behind the Scenes
+Data Structures, Modern Operators and Strings 
+A Closer Look at Functions 
+Working With Arrays
+Asynchronous JavaScript: Promises, Async/Await and AJAX 
+Modern JavaScript Development: Modules and Tooling
+
+
+Object Oriented Programming (OOP) With JavaScript
+Forkify App: Building a Modern Application 
+Setting Up Git and Deployment nutanix
+=================================================================================================================================================
+
+RxJS - reactive extension of javascript.It is librabry for reactive programming using observables.
+	   it easily composes asynchronous or callback code
+	   it provides an implementation of the observable type
+	   it provides utility function for creating and working with observables
+	   provides many built-in operator
+	   can be imported as : import {map} from 'rxjs';
+	Obesevable - is an object and it is interface to handle asynchronous operations
+				 create custom event to send observable data from child component to parent component
+				 handles AJAX request and responses - handled by special module called as httpModule
+						 within httpModule there is httpClient class
+				 Listen and respond to user-input events.
+			observable can be eliminated from memory whereas javascript promises does not allow this feature.
+			
+	Promises - it's javascript feature used to handle asynchronous oepration.
+			   placeholder for future data
+			   it deals with one asynchronous event at a time
+			   it emits a signal value at a time
+			   pushes the error to the child promises.
+			   does not have cancellable sunscription
+			   does not have filter , map like operations
+			   
+	Retrieving data with HTTP request :
+	used jsonplaceholder : https://jsonplaceholder.typicode.com/todos
+	import HttpClientModule in app.module.ts
+	
+	AJAX - Asynchronous JavaScript and XML(XML is not used now days, instead we use JSON) - allows us to communicate with remote web servers asynchronously.
+		   Using AJAX we can request data dynamically from web server 
+		   
+	API - Application Proframming interface, its piece of software which can be use by another software which allows application communicate 
+		  with each other.
+		  
+	CORS - cross origin resource sharing, withous CORS yes/unknown we cannot access third party API
+
+	callback functions - Perform operations one another after, when performing Asynchronous operations.
+						 But due to callback hell promises can be use.
+						 
+	promise - it is an object, container for the asynchronous operation results of AJAX calls.
+		States of promises - pending : Before the future valuse is available
+							 settled : Asynchronous task is finished 
+							          Fullfilled - success now value is available / Rejected - an error happened
+							 Build : Fetch API returns promise 
+							 consume : When we already have a promise (promise return by fetch API)
+							 
+		fetch() - methods returns promise
+		then() - method is used to handle the promise.
+		json() - used to read actual data (response.json() itself returns promise which again needs to handle using then method.)
+		
+		chaining promise -
+		handle rejected promise - 
+		
+	Asynchronous programming behind the scene - call stack, event loop, microstack queue, callback queue
+	consuming promises - using await and async
+	error handling can be done with try and catch block
+	
+==============================================================================================================================================
+Modern javascript development :
+NPM - is an both software and repository, provides module. Its 3rd party package(react, jquery, leaflet etc)
+build process - which contains bundling (join modules in 1 file)  and transpiling or polyfilling using Babel (convert modern javascript back to ES5)
+				we can not do build process by our own, it is done by tools - webpack, parcel
+javascript bundle - finally js bundle runs in browser - actual user will experience this.
+
+Module - its reusable piece of code which encapsulate implementation details.
+uses of modules - 
+	compose software - modules are small building blocks that we put together to build complex applications
+	Isolate component - Modules can be developed without thinking about entire codebase
+	Abstract code - implemen low-level code in modules and import these abstractions into other module.
+	organized, resuable code
+in ES6 module - top-level variables are - scoped to module, default mode is strict mode, top-level this is undefined, imports and exports is possible,
+				HTMl linking can be done as <script type=module>, file downloading is asynchronous
+			importing and exporting in module : 2 types of exporting - named eport and default export
+			
+DOM - Document Object Model is structred representation of the HTML page, it allows to manipulate html element and css style on web page
+	  DOM !== javascript, DOM is actually part of Web APi's
+	  document.querySelector('.message') = selects ex : <p>Hello</p> and document.querySelector('.message').textContent selects = Hello.
+	  
+====================================================================================================================================================
